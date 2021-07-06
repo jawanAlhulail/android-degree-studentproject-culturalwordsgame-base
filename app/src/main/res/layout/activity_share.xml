@@ -57,17 +57,29 @@
 
     <Button
         android:id="@+id/button_share_question"
-        android:layout_width="0dp"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_brown"
+        android:onClick="onShare"
         android:text="@string/share_question_text"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/button_brown"
+        android:onClick="back"
+        android:text="رجوع"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
