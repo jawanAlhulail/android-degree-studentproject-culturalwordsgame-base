@@ -76,7 +76,7 @@
         android:layout_marginStart="16dp"
         android:background="@drawable/button_brown"
         android:onClick="back"
-        android:text="رجوع"
+        android:text="Back"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

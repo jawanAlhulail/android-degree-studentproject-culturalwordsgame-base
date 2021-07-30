@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         private int mCurrentImage ;
         private String mCurrentAnswer;
         private String mCurrentAnswerDesc;
+    private static final String BUNDLE_CURRENT_INDEX = "BUNDLE_CURRENT_INDEX";
  int[] CulturalImages = {
         R.drawable.icon_1,
          R.drawable.icon_2,
@@ -63,7 +64,22 @@ public class MainActivity extends AppCompatActivity {
         onChangeQuestion();
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(BUNDLE_CURRENT_INDEX, mCurrentIndex);
+        super.onSaveInstanceState(outState);
+    }
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if(savedInstanceState != null){
+            mCurrentIndex = savedInstanceState.getInt(BUNDLE_CURRENT_INDEX);
+        }
+        if(mCurrentIndex != -1){
+            onChangeQuestion();
 
+        }
+    }
     public void onChangeLangClicked(View view){
         showLanguageDialog();
     }
