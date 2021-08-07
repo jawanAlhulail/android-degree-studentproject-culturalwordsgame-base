@@ -42,10 +42,12 @@ private ImageView culturalView;
     }
     public void onShare(View view){
         String questionTitle = editText.getText().toString();
+
         Intent shareIntent = new Intent();
-        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
         shareIntent.putExtra(Intent.EXTRA_TEXT, questionTitle);
-        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, sharedImage);
+        shareIntent.setType("*/*");
         startActivity(shareIntent);
 
         SharedPreferences sharedPreferences = getSharedPreferences("app_pref" , MODE_PRIVATE);
